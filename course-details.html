@@ -23,6 +23,8 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
 
   <!-- =======================================================
   * Template Name: Mentor
@@ -71,50 +73,26 @@
         <div class="row">
           <div class="col-lg-8">
             
-            <div id="carouselExampleDark" class="carousel carousel-dark slide">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
-              </div>
-              <div class="carousel-inner">
-                <div class="carousel-item" data-bs-interval="10000">
-                  <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#f5f5f5"></rect></svg>
-                  
-                </div>
-                <div class="carousel-item active" data-bs-interval="2000">
-                  <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect></svg>
-                  
-                </div>
-                <div class="carousel-item">
-                  <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#e5e5e5"></rect></svg>
-                  
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner" id="carousel-inner"></div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
 
-            <h3>坪林⽯碇-新北茶鄉之路</h3>
+            <h3 id="the_title"></h3>
             <div class="trainerss d-flex justify-content-between align-items-center">
               <div class="d-flex justify-content-between align-items-center">
                 <h4>一天</h4>&emsp;<h4>山野</h4>&emsp;<h4>秘境遊</h4>
                 
               </div>
             </div>
-            <p>
-              本路線⾛訪綠光農園，認識坪林有機茶轉型故事，體驗傳
-統採茶烘茶過程；隨後⾄坪感覺餐廳⽤餐，跟隨「新茶世
-代」的年輕職⼈⾛訪坪林⽼街、並參與品茶課程；最後前
-往⽯碇螢⽕蟲書屋，⾛訪古⽼⼭徑，體驗⻝農教育活動，
-共同傳承茶⼭記憶與創⽣精神。
-            </p>
+            <div id="the_desc"></div>
           </div>
           <div class="col-lg-4">
 
@@ -127,41 +105,30 @@
 
             <div class="course-info d-flex justify-content-between align-items-center">
               <h5><i class="bi bi-clock"></i></h5>
-              <p>10 / 22 (⽇) 9:00~16:00</p>
-            </div>
-
-            <div class="course-info d-flex justify-content-between align-items-center">
-              <h5></h5>
-              <p>10 / 23 (五) 13:00~15:00</p>
+              <p id="the_time"></p>
             </div>
 
             <div class="course-info d-flex justify-content-between align-items-center">
               <h5><i class="bi bi-geo-alt"></i></h5>
-              <p>台北⾞站</p>
+              <p id="the_location"></p>
             </div>
 
             <div class="course-info d-flex justify-content-between align-items-center">
               <h5><i class="bi bi-buildings"></i></h5>
-              <p>財團法⼈新北市⽂化基⾦會</p>
-            </div>
-
-            <div class="course-info d-flex justify-content-between align-items-center">
-              <h5></h5>
-              <p>主辦方2</p>
+              <p id="the_org"></p>
             </div>
 
             <div class="course-info d-flex justify-content-between align-items-center">
               <h5><i class="bi bi-cash"></i></h5>
-              <p>300元 / ⼈</p>
+              <p><span id="the_price"></span>元 / ⼈</p>
             </div>
 
             <div class="course-info d-flex justify-content-between align-items-center">
               <h5><i class="bi bi-telephone"></i></h5>
-              <p>曾小姐  |  02-1234-5678</p>
+              <p id="the_phone"></p>
             </div>
 
-            <div class="d-flex justify-content-center align-items-center" >
-              <a href="courses.html" class="get-started-btn">我要報名</a>
+            <div class="d-flex justify-content-center align-items-center" id="link_btn">
             </div>
 
           </div>
@@ -238,7 +205,7 @@
 
       </div>
     </section><!-- End Popular Courses Section -->
-
+    <section id="im"></section>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -306,6 +273,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/course-details.js"></script>
 
 </body>
 

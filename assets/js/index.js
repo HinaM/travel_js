@@ -1,7 +1,7 @@
 
 dataUrl = "https://www.gjlmotea.com/travel_wp/wp-json/wp/v2/posts/72?acf_format=standard";
 
-var html = "<div class='col-lg-4 col-md-6 d-flex align-items-stretch mt-4'><div class='course-item'><img src='{{img_url}}' class='img-fluid' alt='...'><div class='course-content'><h3><a href='course-details.html'>{{title}}</a></h3><div class='trainer d-flex justify-content-between align-items-center'><div class='d-flex justify-content-between align-items-center'>{{tag1}}{{tag2}}{{tag3}}</div></div></div></div></div>";
+var html = "<div class='col-lg-4 col-md-6 d-flex align-items-stretch mt-4'><div class='course-item'><img src='{{img_url}}' class='img-fluid' alt='...'><div class='course-content'><h3><a href='course-details.html?id={{id}}'>{{title}}</a></h3><div class='trainer d-flex justify-content-between align-items-center'><div class='d-flex justify-content-between align-items-center'>{{tag1}}{{tag2}}{{tag3}}</div></div></div></div></div>";
 
 $.ajax({
     url: dataUrl,
@@ -48,7 +48,8 @@ $.ajax({
         }
 
        
-        var now_data = html.replace("{{title}}",res.title.rendered)
+        var now_data = html.replace("{{id}}",res.id)
+                            .replace("{{title}}",res.title.rendered)
                             .replace("{{img_url}}",res.acf.images.image2)
                             .replace("{{tag1}}",tag1)
                             .replace("{{tag2}}",tag2)
